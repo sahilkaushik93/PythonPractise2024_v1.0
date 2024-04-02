@@ -1,4 +1,4 @@
-# BRUTE FORCE --> O(n^2)
+## BRUTE FORCE --> O(n^2)
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
         twoSumOutputLst = []
@@ -22,7 +22,7 @@ test = Solution()
 test1 = test.twoSum([3,2,4], 6)
 print(test1)
 
-# Hash Table --> O(n)
+## Hash Table --> O(n)
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
         match_hash = {}
