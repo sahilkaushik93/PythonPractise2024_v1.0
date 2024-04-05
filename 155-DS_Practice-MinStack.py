@@ -46,8 +46,9 @@ class MinStack:
 
     def push(self, val: int) -> None:
         self.array.append(val)
+
         if self.min:
-            if val < self.min[-1]:
+            if val <= self.min[-1]:
                 self.min.append(val)
         else:
             self.min.append(val)
@@ -57,11 +58,10 @@ class MinStack:
             self.min.pop()
         self.array.pop()
 
-    def top(self) -> int:
-        if self.array:
-            return self.array[-1]
+    def top(self):
+        return self.array[-1]
 
-    def getMin(self) -> int:
+    def getMin(self):
         return self.min[-1]
 
 
