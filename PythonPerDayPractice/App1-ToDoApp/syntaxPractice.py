@@ -1,14 +1,6 @@
 # checking all attributes existing in list
 print(dir(list))
 
-ranking = ['John', 'Sen', 'Lisa']
-
-name = input("Persons name:")
-
-a = ranking.index(name)
-
-print(a)
-
 todos = []
 
 # iterating in while loop, to continuously take inputs from user
