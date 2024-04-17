@@ -7,7 +7,7 @@ todos = []
 while True:
     
     # taking input from user
-    user_input = input("Choose your option (add, show or exit): ")
+    user_input = input("Choose your option (add, show, edit, complete or exit): ")
     
     # removing trailing whitespaces from string
     user_input = user_input.strip()
@@ -22,9 +22,9 @@ while True:
         
         # showing or displaying task ("|" it is a bitwise OR operator)
         case 'show' | 'display':
-            for item in todos:
+            for index, item in enumerate(todos):
                 item = item.title()
-                print(item)
+                print(f"{index+1}-{item}")
         
         # exiting from iteration        
         case 'exit':
@@ -35,6 +35,11 @@ while True:
         case 'edit':
             number = int(input("Enter text position you want to edit: ")) - 1
             todos[number] = input("Enter new text to be replaced: ")
+
+        # complete option -> ask for task no & remove the task i.e. completed
+        case 'complete':
+            number = int(input("Enter text position you want to mark complete: ")) - 1
+            todos.pop(number)
 
         # Irrefutable Pattern Handling: when user entering an unknown text (we can use any variable name in this case)
         case _ :
