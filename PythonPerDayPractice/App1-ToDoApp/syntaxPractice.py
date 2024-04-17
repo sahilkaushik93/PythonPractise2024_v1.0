@@ -1,3 +1,14 @@
+# checking all attributes existing in list
+print(dir(list))
+
+ranking = ['John', 'Sen', 'Lisa']
+
+name = input("Persons name:")
+
+a = ranking.index(name)
+
+print(a)
+
 todos = []
 
 # iterating in while loop, to continuously take inputs from user
@@ -17,9 +28,10 @@ while True:
             todo = input("add a todo: ")
             todos.append(todo)
         
-        # showing or displaying task    
+        # showing or displaying task ("|" it is a bitwise OR operator)
         case 'show' | 'display':
             for item in todos:
+                item = item.title()
                 print(item)
         
         # exiting from iteration        
@@ -27,6 +39,11 @@ while True:
             print("Bye!")
             break
 
-        # when user entering an unknown text (we can use any variable name in this case)
+        # edit option -> replace an existing text with new text at a specific location in list
+        case 'edit':
+            number = int(input("Enter text position you want to edit: ")) - 1
+            todos[number] = input("Enter new text to be replaced: ")
+
+        # Irrefutable Pattern Handling: when user entering an unknown text (we can use any variable name in this case)
         case _ :
             print("Hey, you entered an unknown text. Please insert (add/show/exit)")
