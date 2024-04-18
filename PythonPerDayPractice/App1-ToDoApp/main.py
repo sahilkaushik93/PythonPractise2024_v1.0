@@ -32,7 +32,7 @@ while True:
         # showing or displaying task ("|" it is a bitwise OR operator)
         case 'show' | 'display':
             for index, item in enumerate(todos1):
-                item = item.title()
+                item = item.title().strip("\n")
                 print(f"{index+1}-{item}")
         
         # exiting from iteration        
