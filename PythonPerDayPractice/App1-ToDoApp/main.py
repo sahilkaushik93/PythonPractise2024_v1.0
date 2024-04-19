@@ -4,9 +4,12 @@
 todos = []
 
 # reading todos.txt file
-file1 = open('./PythonPerDayPractice/App1-ToDoApp/todos.txt',"r")
-todos1 = file1.readlines()
+with open('./PythonPerDayPractice/App1-ToDoApp/todos.txt',"r") as file1:
+    todos1 = file1.readlines()
 file1.close()
+
+# writing in the txt file
+file2 = open('./PythonPerDayPractice/App1-ToDoApp/todos.txt',"w")
 
 # iterating in while loop, to continuously take inputs from user
 while True:
@@ -16,9 +19,6 @@ while True:
     
     # removing trailing whitespaces from string
     user_input = user_input.strip()
-
-    # writing in the txt file
-    file2 = open('./PythonPerDayPractice/App1-ToDoApp/todos.txt',"w")
 
     # applying match-case for app functionality
     match user_input:
