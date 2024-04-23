@@ -1,12 +1,22 @@
 # checking all attributes existing in list
 # print(dir(list))
 
-todos = []
+# todos = []
+
+# utility functions
+def read_todos(todos_loc):
+    '''
+    functions will be reading todos file
+    '''
+    with open(todos_loc,"r") as file1:
+        todos = file1.readlines()
+    file1.close()
+    return todos
+
 
 # reading todos.txt file
-with open('./PythonPerDayPractice/App1-ToDoApp/todos.txt',"r") as file1:
-    todos1 = file1.readlines()
-file1.close()
+todos_loc = './PythonPerDayPractice/App1-ToDoApp/todos.txt'
+todos1 = read_todos(todos_loc)
 
 # writing in the txt file
 file2 = open('./PythonPerDayPractice/App1-ToDoApp/todos.txt',"w")
@@ -22,12 +32,13 @@ while True:
 
     # applying match-case for app functionality
     match user_input:
-
+        
         # adding task
         case 'add':
             todo = input("add a todo: ") + "\n" 
             todos1.append(todo)
             file2.writelines(todos1)
+            
         
         # showing or displaying task ("|" it is a bitwise OR operator)
         case 'show' | 'display':
@@ -56,3 +67,8 @@ while True:
         # Irrefutable Pattern Handling: when user entering an unknown text (we can use any variable name in this case)
         case _ :
             print("Hey, you entered an unknown text. Please insert (add/show/exit)")
+
+
+
+
+
