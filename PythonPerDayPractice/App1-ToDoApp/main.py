@@ -1,6 +1,11 @@
 # importing modules
 # from utilities import read_todos
 import utilities
+import time
+
+# displaying time
+now = time.strftime("%b %d, %Y %H:%M:%S")
+print("Time is: ",now) 
 
 # reading todos.txt file
 todos_loc = './PythonPerDayPractice/App1-ToDoApp/todos.txt'
