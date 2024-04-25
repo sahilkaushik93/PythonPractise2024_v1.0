@@ -7,13 +7,17 @@
 # print(todos2)
 # file2.close()
 
-file = open('./PythonPerDayPractice/App1-ToDoApp/rough.txt',"r")
-rough = file.read()
-print(rough)
-print(len(rough))
+# file = open('./PythonPerDayPractice/App1-ToDoApp/rough.txt',"r")
+# rough = file.read()
+# print(rough)
+# print(len(rough))
 # a = rough[0].split()
 # b = [i.capitalize() for i in a]
 # print(" ".join(b))
 
 # a = len("sdsd ffsd ".replace(" ",""))
 # print(a)
+
+
+with open('face_analysis.json', 'wb') as f:
+    f.writelines(1)

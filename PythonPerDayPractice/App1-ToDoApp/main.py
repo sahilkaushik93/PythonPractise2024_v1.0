@@ -1,22 +1,10 @@
-# checking all attributes existing in list
-# print(dir(list))
-
-# todos = []
-
-# utility functions
-def read_todos(todos_loc):
-    '''
-    functions will be reading todos file
-    '''
-    with open(todos_loc,"r") as file1:
-        todos = file1.readlines()
-    file1.close()
-    return todos
-
+# importing modules
+# from utilities import read_todos
+import utilities
 
 # reading todos.txt file
 todos_loc = './PythonPerDayPractice/App1-ToDoApp/todos.txt'
-todos1 = read_todos(todos_loc)
+todos1 = utilities.read_todos(todos_loc)
 
 # writing in the txt file
 file2 = open('./PythonPerDayPractice/App1-ToDoApp/todos.txt',"w")
