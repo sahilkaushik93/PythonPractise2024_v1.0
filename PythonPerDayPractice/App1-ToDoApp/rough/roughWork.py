@@ -21,3 +21,7 @@
 
 with open('face_analysis.json', 'wb') as f:
     f.writelines(1)
+
+# checking all attributes existing in list
+# print(dir(list))
+    
