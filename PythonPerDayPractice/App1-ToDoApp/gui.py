@@ -53,7 +53,7 @@ while True:
             utilities.write_todos(todos)
 
             # making things appear live by updating values in windows instance
-            # window["todos"].update(values['todo'])
+            window["todos"].update(values=todos)
 
         case "Edit":
             # adding edit functionality [updating todos.txt in background]
@@ -67,7 +67,11 @@ while True:
             utilities.write_todos(todos)
 
             # making things appear live by updating values in windows instance
-            # window["todos"].update(values['todo'])
+            window["todos"].update(values=todos)
+
+        case "todos":
+            # to show selected to do item from list box into input box 1 (key='todo')
+            window['todo'].update(value=values['todos'][0])
 
         case sg.WIN_CLOSED:
             break
