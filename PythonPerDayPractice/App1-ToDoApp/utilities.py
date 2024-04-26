@@ -6,7 +6,6 @@ def read_todos(todos_loc='./PythonPerDayPractice/App1-ToDoApp/todos.txt'):
     '''
     with open(todos_loc,"r") as file1:
         todos = file1.readlines()
-    file1.close()
     return todos
 
 def write_todos(txt, todos_loc='./PythonPerDayPractice/App1-ToDoApp/todos.txt'):
@@ -15,9 +14,10 @@ def write_todos(txt, todos_loc='./PythonPerDayPractice/App1-ToDoApp/todos.txt'):
     todos_loc : type <str>
     '''
     with open(todos_loc,"w") as file1:
-        todos = file1.writelines(str(txt) + "\n")
-    file1.close()
-    return todos
+        file1.writelines(txt)
+    
+if __name__ == "__main__":
+    print(read_todos())
 
 
 

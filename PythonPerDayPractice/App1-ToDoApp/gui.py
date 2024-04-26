@@ -31,22 +31,44 @@ while True:
     event, values = window.read()
 
     # event looks like a tuple containing value added in dict format
-    print("event: ",event) # event at which value was added (added due to input_button)
-    print("value: ", values) # value added with a key of "todo" (key given in input_button definition)
-
+    print("1-event: ",event) # event at which value was added (added due to input_button)
+    print("2-value: ", values) # value added with a key of "todo" (key given in input_button definition)
+    print("3-current todos value selected: ", values)
+    print("\n____________\n")
     match event:
         case "Add":
-            # adding add functionality [updating todos.txt in background]
+            # adding add functionality [adding todos.txt in background]
             todos = utilities.read_todos()
-            new_todo = values['todo']
+            print("read todos: ", todos)
+
+            # [Bug]:if todos.txt has no task it should not enter "\n" in that case
+            if not values['todo']:
+                new_todo = values['todo']
+            else:
+                new_todo = values['todo'] + "\n"
+            
             todos.append(new_todo)
+            print("new todos: ",todos)
+            
             utilities.write_todos(todos)
 
             # making things appear live by updating values in windows instance
-            window["todos"].update(values['todo'])
+            # window["todos"].update(values['todo'])
 
         case "Edit":
-            print(values)
+            # adding edit functionality [updating todos.txt in background]
+            todos = utilities.read_todos()
+
+            edit_todo = values['todos'][0]
+            edit_index = todos.index(edit_todo)
+            new_todo = values['todo'] + "\n"
+            todos[edit_index] = new_todo
+            
+            utilities.write_todos(todos)
+
+            # making things appear live by updating values in windows instance
+            # window["todos"].update(values['todo'])
+
         case sg.WIN_CLOSED:
             break
 
