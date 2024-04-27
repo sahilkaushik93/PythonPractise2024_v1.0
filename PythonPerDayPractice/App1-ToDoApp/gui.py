@@ -1,3 +1,5 @@
+import sys
+sys.path.append('E:\Job & Interview Kit\Revision Material\DS & Algos - Python & JavaScript\PythonPractise2024\PythonPerDayPractice')
 import utilities
 import FreeSimpleGUI as sg
 
@@ -35,7 +37,10 @@ while True:
     print("2-value: ", values) # value added with a key of "todo" (key given in input_button definition)
     print("3-current todos value selected: ", values)
     print("\n____________\n")
+
+    # matching event and adding diff functionalities on to do app
     match event:
+        
         case "Add":
             # adding add functionality [adding todos.txt in background]
             todos = utilities.read_todos()
@@ -72,6 +77,8 @@ while True:
         case "todos":
             # to show selected to do item from list box into input box 1 (key='todo')
             window['todo'].update(value=values['todos'][0])
+
+        
 
         case sg.WIN_CLOSED:
             break
