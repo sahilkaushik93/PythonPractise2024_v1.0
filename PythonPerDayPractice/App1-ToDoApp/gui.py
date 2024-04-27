@@ -12,12 +12,16 @@ label2 = sg.Text("List of all to do tasks:")
 input_box2 = sg.Listbox(values=utilities.read_todos(), key="todos",
                         enable_events=True, size=[45,10])
 edit_button = sg.Button("Edit")
+complete_button = sg.Button("Complete")
+exit_button = sg.Button("Exit")
 
 
 layout = [
-    [label1, input_box1, add_button],
+    [label1], 
+    [input_box1],
     [label2],
-    [input_box2, edit_button]
+    [input_box2],
+    [add_button, edit_button, complete_button, exit_button]
 ]
 
 # creating a window instance
@@ -78,7 +82,21 @@ while True:
             # to show selected to do item from list box into input box 1 (key='todo')
             window['todo'].update(value=values['todos'][0])
 
-        
+        case "Complete":
+            todos = utilities.read_todos()
+            print("read todos: ", todos)
+            val = values['todo']
+            print("val:", val)
+            val_index = todos.index(val)
+            todos.pop(val_index)
+            print("write todos:", todos)
+            utilities.write_todos(todos)
+
+            # making things appear live by updating values in windows instance
+            window["todos"].update(values=todos)
+
+        case "Exit":
+            exit()
 
         case sg.WIN_CLOSED:
             break
