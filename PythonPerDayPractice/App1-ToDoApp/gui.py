@@ -85,15 +85,17 @@ while True:
         case "Complete":
             todos = utilities.read_todos()
             print("read todos: ", todos)
-            val = values['todo']
+            val = values['todos'][0]
             print("val:", val)
-            val_index = todos.index(val)
-            todos.pop(val_index)
+            # val_index = todos.index(val)
+            # todos.pop(val_index)
+            todos.remove(val)
             print("write todos:", todos)
             utilities.write_todos(todos)
 
             # making things appear live by updating values in windows instance
-            window["todos"].update(values=todos)
+            window["todos"].update(values=todos) # changes will appear in list box
+            window["todo"].update(value='') # changes will apear in input box
 
         case "Exit":
             exit()
