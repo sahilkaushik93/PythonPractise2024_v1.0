@@ -10,21 +10,29 @@ import FreeSimpleGUI as sg
 import time
 
 # Applying theme (go on google & search "PySimpleGUI themes images")
-sg.theme("Black")
+sg.theme("Reds")
+
+# logo paths
+img_loc = './PythonPerDayPractice/App1-ToDoApp/assets/images'
+add_img = f'{img_loc}/add.png'
+add_img2 = f'./PythonPerDayPractice/App1-ToDoApp/add.png'
+edit_img = f'{img_loc}/edit.png'
+complete_img = f'{img_loc}/complete.png'
+exit_img = f'{img_loc}/exit.png'
 
 # creating window elements
 now = time.strftime("%b %d, %Y %H:%M:%S")
 clock = sg.Text(key="clock")
 label1 = sg.Text("Type in a to do:")
 input_box1 = sg.InputText(tooltip="Enter todo", key="todo")
-add_button = sg.Button("Add")
+add_button = sg.Button(size=2, image_source=add_img, key="Add", tooltip="Add Task.", mouseover_colors="Grey")
 
 label2 = sg.Text("List of all to do tasks:")
 input_box2 = sg.Listbox(values=utilities.read_todos(), key="todos",
                         enable_events=True, size=[45,10])
-edit_button = sg.Button("Edit")
-complete_button = sg.Button("Complete")
-exit_button = sg.Button("Exit")
+edit_button = sg.Button(size=2, image_source=edit_img, key="Edit", tooltip="Edit Task.", mouseover_colors="Grey")
+complete_button = sg.Button(size=2, image_source=complete_img, key="Complete", tooltip="Mark Task Complete.", mouseover_colors="Grey")
+exit_button = sg.Button(size=2, image_source=exit_img, key="Exit", tooltip="Exit App.", mouseover_colors="Grey")
 
 # giving layout of elements to be displayed in windows 
 layout = [
@@ -38,9 +46,7 @@ layout = [
 
 # creating a window instance
 # layout = "[]" elements in sq brackets will be kept on same row
-window = sg.Window("My To-Do APP", 
-                   layout=layout,
-                   font=('Helvetica', 10)) 
+window = sg.Window("My To-Do APP", layout=layout, font=('Helvetica', 10)) 
 
 
 # iterating to add multiple value via app
@@ -101,6 +107,7 @@ while True:
             window['todo'].update(value=values['todos'][0])
 
         case "Complete":
+            
             try:
                 todos = utilities.read_todos()
                 print("read todos: ", todos)
@@ -123,9 +130,6 @@ while True:
 
         case sg.WIN_CLOSED:
             break
-
- 
-    
 
 # displaying hello once GUI functions are performed
 print('hello')
