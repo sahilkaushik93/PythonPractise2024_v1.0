@@ -1,0 +1,20 @@
+To deploy follow below steps:-
+
+1. Create a fresh projects containing files related to web only
+    for e.g. To host to do app -> create a project containing 
+    'web.py', 'utilities.py' & 'todos.txt'.
+
+2. Create a requirements.txt in same fresh project using below command:
+    "pip freeze > requirements.txt".
+
+3. Add a .gitignore folder -> add venv & .idea folder into it.
+
+4. Commit & Push project to github.
+
+5. start web app using local IDE by using following command:
+    "streamlit run ./PythonPerDayPractice/App1-ToDoApp/web.py" in IDE.
+
+6. On top right corner of web app page opened in browser will have "Deploy" option.
+
+7. Paste URL of git repo & remove ".git" & mention the branch name and the script 
+    name "web.py" that we are suppose to run. 
