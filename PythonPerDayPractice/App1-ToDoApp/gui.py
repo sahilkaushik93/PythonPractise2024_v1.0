@@ -52,7 +52,7 @@ window = sg.Window("My To-Do APP", layout=layout, font=('Helvetica', 10))
 # iterating to add multiple value via app
 while True:
     # displaying GUI
-    event, values = window.read(timeout=100)
+    event, values = window.read(timeout=100) # timeout forces while loop to get executed once in 100 sec despite user inputs 
 
     # displaying clock on window
     window["clock"].update(value=now)
