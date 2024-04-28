@@ -8,6 +8,9 @@ import utilities
 import streamlit as st
 import time
 
+# Making web page adjusted w.r.t APP size
+st.set_page_config(layout="wide")
+
 # current time
 now = time.strftime("%b %d, %Y %H:%M:%S")
 
