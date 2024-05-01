@@ -12,6 +12,7 @@ st.set_page_config(layout="wide")
 # ".columns" method will return two column objects
 col1, col2 = st.columns(2)
 
+# adding image and introduction
 with col1:
     st.image(f"{loc}\images\profile_photo.png")
 
@@ -33,14 +34,13 @@ with col2:
     st.write("LinkedIn: www.linkedin.com/in/sahilkaushik1412")
     st.write("GitHub: https://github.com/sahilkaushik93")
     
-    
-
-
+# adding indicators
 content2 = """
 Below you can find some of the apps I have built. Feel free to contact me!
 """
 st.info(content2)
 
+# adding all apps information
 col3, col4 = st.columns(2)
 
 with col3:
