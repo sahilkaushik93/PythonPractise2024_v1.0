@@ -1,4 +1,5 @@
-Apr 27, 2024 21:41:17 : Python Ardit Course - ToDo Web App
-Apr 27, 2024 21:41:17 : Exercise Start
 Apr 27, 2024 21:41:17 : TechMettle UI Draw
 Apr 28, 2024 18:37:49 : TIU SureCafe CoC analysis wrap up
+May 01, 2024 11:50:39 : MBA Sample Papers - 4th Sem
+May 01, 2024 11:51:00 : MBA Project - 4th Sem
+May 01, 2024 11:51:27 : Python Portfolio App - Ardit
