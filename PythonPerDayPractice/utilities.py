@@ -1,6 +1,8 @@
 # utility functions
 import zipfile
 import pathlib
+import smtplib, ssl
+import os
 
 def read_todos(todos_loc='./PythonPerDayPractice/App1-ToDoApp/todos.txt'):
     '''
@@ -38,6 +40,29 @@ def extract_archive(archivepath, dest_dir):
     '''
     with zipfile.ZipFile(archivepath, 'r') as archive:
         archive.extractall(dest_dir)
+
+
+def send_email(message):
+
+    host = "smtp.gmail.com"
+    port = 465
+
+    # Procedure to set env variables: 
+    # Go to System Properties -> Environment Variables -> Add env variables in User Variables
+    username = os.getenv("RECEIVER-EMAIL")
+    password = os.getenv("GOOGLE-EMAIL-PASSWORD")
+
+    receiver = os.getenv("RECEIVER-EMAIL")
+    context = ssl.create_default_context()
+
+    with smtplib.SMTP_SSL(host=host, port=port, context=context) as server:
+        server.login(user=username, password=password)
+        server.sendmail(username, receiver, message)
+
+
+
+
+
 
 
 if __name__ == "__main__":

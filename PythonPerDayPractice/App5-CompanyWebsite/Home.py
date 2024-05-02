@@ -42,10 +42,13 @@ why_choose_us = """
 
 """
 st.info(introduction)
+st.divider()
 st.header("Our Services")
 st.write(our_services, unsafe_allow_html=True)
+st.divider()
 st.header("Why Choose Us?")
 st.write(why_choose_us, unsafe_allow_html=True)
+st.divider()
 st.header("Our Team")
 
 # ".columns" method will return three column objects
@@ -55,21 +58,27 @@ indice_len = int(len(data)/3)
 
 with col1:
     for index, value in data[:indice_len].iterrows():
+        st.divider()
         st.header(f"{value['first name']} {value['last name']}")
         st.write(value["role"])
         st.image(f"{loc}\images\{value['image']}")
+        st.divider()
 
 with col2:
     for index, value in data[indice_len:2*indice_len].iterrows():
+        st.divider()
         st.header(f"{value['first name']} {value['last name']}")
         st.write(value["role"])
         st.image(f"{loc}\images\{value['image']}")
+        st.divider()
 
 with col3:
     for index, value in data[2*indice_len:].iterrows():
+        st.divider()
         st.header(f"{value['first name']} {value['last name']}")
         st.write(value["role"])
         st.image(f"{loc}\images\{value['image']}")
+        st.divider()
 
 
 
