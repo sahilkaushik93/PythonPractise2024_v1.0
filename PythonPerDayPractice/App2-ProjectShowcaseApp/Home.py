@@ -43,24 +43,26 @@ st.info(content2)
 # adding all apps information
 col3, col4 = st.columns(2)
 
+# st.divider()
 with col3:
     for index, value in data[:int(len(data)/2)].iterrows():
     # print(index, ":", value["title"])
-        st.divider()
+        # st.divider()
         st.header(value["title"])
         st.write(value["description"])
         st.image(f"{loc}\images\{value['image']}")
         st.write(f"[GitHub Code]({value['url']})")
-        st.divider()
+        # st.divider()
 
+# st.divider()
 with col4:
     for index, value in data[int(len(data)/2):].iterrows():
-        st.divider()
+        # st.divider()
         st.header(value["title"])
         st.write(value["description"])
         st.image(f"{loc}\images\{value['image']}")
         st.write(f"[GitHub Code]({value['url']})")
-        st.divider()
+        # st.divider()
 
 
 
