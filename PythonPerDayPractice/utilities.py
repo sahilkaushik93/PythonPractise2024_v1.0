@@ -57,7 +57,7 @@ def send_email(message):
 
     with smtplib.SMTP_SSL(host=host, port=port, context=context) as server:
         server.login(user=username, password=password)
-        server.sendmail(username, receiver, message)
+        server.sendmail(username, receiver, message.encode('utf-8'))
 
 
 
