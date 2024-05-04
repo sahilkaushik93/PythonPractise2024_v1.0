@@ -12,7 +12,7 @@ response = requests.get(url=url)
 
 news = response.json()
 
-message = f"Subject: Today News - {time.ctime()}"
+message = f"Subject: Today News related to {topic} - {time.ctime()}"
 
 for i in news['articles']:
     message = message + "\n\nNews:\n" + str(i.get('description')) + "\n" + i.get('url')
