@@ -3,10 +3,13 @@ import time
 import sys
 sys.path.append('E:\Job & Interview Kit\Revision Material\DS & Algos - Python & JavaScript\PythonPractise2024\PythonPerDayPractice')
 import utilities
+import os
 
-topic = "tesla"
+topic = "artificial intelligence"
 
-url = f"https://newsapi.org/v2/everything?q={topic}&from=2024-04-04&sortBy=publishedAt&apiKey=7e0e07ed88764a0f894d5bbd46f3f567&language=en"
+api = os.environ.get("NEWS-API")
+
+url = f"https://newsapi.org/v2/everything?q={topic}&from=2024-04-04&sortBy=publishedAt&apiKey={api}&language=en"
 
 response = requests.get(url=url)
 
