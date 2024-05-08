@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import pandas as pd
 
 loc = "E:\Job & Interview Kit\Revision Material\DS & Algos - Python & JavaScript\PythonPractise2024\PythonPerDayPractice\App8-HistoricalWeatherAPI"
 
@@ -17,7 +18,11 @@ def home():
 # i.e. user can provide url of api/v1 and then dynamically enter "station" & "date"
 @app.route("/api/v1/<station>/<date>")
 def api_response(station, date):
-    temperature = 25
+    
+    filename = f"{loc}\data\data\TG_STAID" + str(station).zfill(6) + ".txt"
+    df = pd.read_csv(filename, skiprows=20, parse_dates=["    DATE"])
+    temperature = df.loc[df["    DATE"]==date]['   TG'].squeeze() / 10
+
     return {
         "station": station,
         "date": date,
