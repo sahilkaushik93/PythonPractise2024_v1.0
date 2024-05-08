@@ -26,7 +26,9 @@ def api_response(station, date):
 
 # debug = True will give you a feature of displaying errors on webpage
 # if __name__ = __main__ to run flask app only when "Home.py" runs 
+# if you want to run multiple flask apps at once, you need to mention "port" no in app.run()
+# by default all apps run at "port = 5000"
+# if multiple apps are not running at once, then "port" variable is not required
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=5001)
 
-    
