@@ -8,11 +8,17 @@ loc = "E:\Job & Interview Kit\Revision Material\DS & Algos - Python & JavaScript
 # is imported in some other script that it will give "Home" instead of main and thus flask app won't run
 app = Flask(__name__, template_folder=f"{loc}\\templates")
 
+# reading file to be displayed at home
+filename = f"{loc}\data\data_small\stations.txt"
+df = pd.read_csv(filename, skiprows=17)
+df = df[["STAID","STANAME                                 "]]
+# print(df)
+
 # decorator connects app method with home function i.e. 
 # "/home" url connected with "tutorial.html"
 @app.route("/")
 def home():
-    return render_template(f"home.html")
+    return render_template(f"home.html", data = df.to_html())
 
 # here "<" & ">" provides a feature to take input from user dynamically
 # i.e. user can provide url of api/v1 and then dynamically enter "station" & "date"

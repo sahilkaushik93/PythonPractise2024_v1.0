@@ -13,8 +13,14 @@
     <p>
         <e class="g">
             Example: http://127.0.0.1:5000/api/v1/10/1998-10-12
-        </e>
-        
+        </e> 
     </p>
+    <div>
+        <!-- 
+            Here data is variable table sent from Home.py via home()
+            "safe" is to display table else raw table with html tags will appear on webpage
+        -->
+        {{data|safe}}
+    </div>
 </body>
 </html>

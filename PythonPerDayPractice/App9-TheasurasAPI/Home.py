@@ -14,6 +14,7 @@ def home():
 @app.route("/theasuras/api/<word>")
 def eng_dict(word):
 
+    # load data only when this specific endpoint is called
     df = pd.read_csv(f'{loc}\\data\\dictionary.csv')
     df['word'] = df['word'].apply(lambda x: str(x).lower())
     df['definition'] = df['definition'].apply(lambda x: str(x).lower())
