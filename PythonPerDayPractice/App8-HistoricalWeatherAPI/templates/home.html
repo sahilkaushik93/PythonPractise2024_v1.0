@@ -6,15 +6,47 @@
 </head>
 <body>
     <h1>Weather Data API</h1>
+    <flexbox>
+        <b>
+            <ul>
+                Date specific temperature: http://127.0.0.1:5000/api/v1/station/date
+            </ul>
     
-    <b>
-        URL format: http://127.0.0.1:5000/api/v1/station/date
-    </b>
-    <p>
-        <e class="g">
-            Example: http://127.0.0.1:5000/api/v1/10/1998-10-12
-        </e> 
-    </p>
+            <ul>
+                Year specific temperature: http://127.0.0.1:5000/api/v1/annual/station/year
+            </ul>
+    
+            <ul>
+                Station specific temperature: http://127.0.0.1:5000/api/v1/station
+            </ul>
+        </b>
+    </flexbox>
+     
+    <flexbox>
+        <div>
+
+            <li>
+                <e class="g">
+                    Example for 1 specific day temperature: http://127.0.0.1:5000/api/v1/10/1998-10-12
+                </e>
+            </li>
+            
+            <li>
+                <e class="g">
+                    Example for annual temperature: http://127.0.0.1:5000/api/v1/annual/10/1998
+                </e>
+            </li>
+            
+            <li>
+                <e class="g">
+                    Example for station temperature of all timestamps: http://127.0.0.1:5000/api/v1/10
+                </e>
+            </li>
+    
+        </div>
+    </flexbox>
+    
+    
     <div>
         <!-- 
             Here data is variable table sent from Home.py via home()

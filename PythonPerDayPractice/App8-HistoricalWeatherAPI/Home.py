@@ -23,7 +23,7 @@ def home():
 # here "<" & ">" provides a feature to take input from user dynamically
 # i.e. user can provide url of api/v1 and then dynamically enter "station" & "date"
 @app.route("/api/v1/<station>/<date>")
-def api_response(station, date):
+def date_specific_api_response(station, date):
     
     filename = f"{loc}\data\data\TG_STAID" + str(station).zfill(6) + ".txt"
     df = pd.read_csv(filename, skiprows=20, parse_dates=["    DATE"])
@@ -34,6 +34,25 @@ def api_response(station, date):
         "date": date,
         "temperature": temperature
     }
+
+
+@app.route("/api/v1/annual/<station>/<year>")
+def year_specific_api_response(station, year):
+    
+    filename = f"{loc}\data\data\TG_STAID" + str(station).zfill(6) + ".txt"
+    df = pd.read_csv(filename, skiprows=20)
+    df["    DATE"]=df["    DATE"].astype(str)
+    df = df[df['    DATE'].str.startswith(str(year))]
+
+    return df.to_dict(orient="records")
+
+@app.route("/api/v1/<station>")
+def station_specific_api_response(station):
+    
+    filename = f"{loc}\data\data\TG_STAID" + str(station).zfill(6) + ".txt"
+    df = pd.read_csv(filename, skiprows=20, parse_dates=["    DATE"])
+
+    return df.to_dict(orient="records")
 
 # debug = True will give you a feature of displaying errors on webpage
 # if __name__ = __main__ to run flask app only when "Home.py" runs 
