@@ -5,6 +5,7 @@ from PyQt6.QtWidgets import QApplication, QLabel, \
 from PyQt6.QtGui import QAction
 import sys
 from datetime import datetime
+import sqlite3
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -21,8 +22,14 @@ class MainWindow(QMainWindow):
         help_menu_item.addAction(about_action)
         about_action.setMenuRole(QAction.MenuRole.NoRole)
 
-        table = QTableWidget()
+        self.table = QTableWidget()
+        self.table.setColumnCount(4)
+        self.table.setHorizontalHeaderLabels(('Id', 'Name', 'Course', 'Mobile'))
+        self.setCentralWidget(self.table)
 
+    def load_data(self):
+         
+        self.table
 
 app = QApplication(sys.argv)
 st_management = MainWindow()
