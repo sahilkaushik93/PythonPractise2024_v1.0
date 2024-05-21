@@ -1,0 +1,7 @@
+In Terminal: "pip install django"
+In Terminal: "django-admin startproject mysite ." It will create folder structure in root directory so better first change directory in termainal using "cd" command, in which you want to create folder strucuture and then run above command.
+2nd step will create a folder "mysite" containing __init__.py, asgi.py, settings.py, urls.py, wsgi.py. It will create manage.py also.
+In Terminal: "python manage.py startapp job_application" It will create a folder job_application containing few files. Here, it is basically running manage.py file that expects few parameter like "startapp" & "your app name" for e.g. in our case it's "job_application"
+Here, mysite folder files & manage.py is one project. A project can contain multiple apps like "job_application".
+Go to mysite -> settings.py -> "INSTALLED_APPS" In Application definition Section. Add 'job_application' in "INSTALLED_APPS". 
+In Terminal type: "python manage.py runserver" command to run you django website.
