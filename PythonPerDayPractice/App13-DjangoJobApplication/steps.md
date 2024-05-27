@@ -37,4 +37,13 @@
     2. Create forms.py in same directory as views.py (in job_application folder). 
     3. forms.py is for Application Form & models.py is for database.
     4. In views.py: create all variables storing user response requests values"form.cleaned_data['first_name']". Here "first_name" is the value provided in "index.html" to first name input field.
-    5. 
+    5. With this we will have users response that he/she would provide via web-page inside the variables "first_name", "last_name", "date", "occupation" & "email" defined in "views.py/index()".
+
+*  Storing data in database:
+    1. Import Db model in views: from .models import Form (Where we have defined our DB schema).
+    2. If it is an input fetched from index page add few lines in index function to save in db.
+    3. "Form.objects.create()" function will help to interact with db & it will create the data replica into dbsqlite3.
+
+* Displaying Success message on front-end:
+    1. "from django.contrib import messages" in views.py.
+    2.   
