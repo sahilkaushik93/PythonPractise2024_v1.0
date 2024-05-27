@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .forms import ApplicationForm # ".forms" refer the local file, "forms" refer the file in root directory
 from .models import Form
 from django.contrib import messages
+from django.core.mail import EmailMessage
 
 # Create your views here.
 def index(request):
@@ -27,7 +28,14 @@ def index(request):
                                 email=email, date=date, occupation=occupation)
             
             # Displaying success message on front-end
-            
+            messages.success(request, "Form Submitted Successfully !!")
+
+            # Sending an email from django form
+            message_body = f"A new job application was submitted. Thank you, {first_name}."
+            email_message = EmailMessage(subject="Form submitted successfully!", 
+                                         body=message_body, 
+                                         to=[email])
+            email_message.send()           
 
     return render(request, "index.html")
 

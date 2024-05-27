@@ -46,4 +46,9 @@
 
 * Displaying Success message on front-end:
     1. "from django.contrib import messages" in views.py.
-    2.   
+    2. use messages.success() to dosplay messages
+
+* Sending an email of confirmation
+    1. "from django.coore.mail import EmailMessage" in views.py.
+    2. In mysite/settings -> under "# Default primary key field type" section -> add: EMAIL_BACKEND, EMAIL_HOST, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, EMAIL_PORT, EMAIL_USER_TLS.
+    3.   In view.py
