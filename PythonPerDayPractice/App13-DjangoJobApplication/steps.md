@@ -52,3 +52,22 @@
     1. "from django.coore.mail import EmailMessage" in views.py.
     2. In mysite/settings -> under "# Default primary key field type" section -> add: EMAIL_BACKEND, EMAIL_HOST, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, EMAIL_PORT, EMAIL_USER_TLS.
     3.   In view.py
+
+* Setting up admin page
+    1. go to "job_application/admin.py".
+    2. Here, you have to import your models.
+    3. Register a class with admin: "admin.site.register(Form)".
+    4. In Terminal: "python manage.py createsuperuser" -> enter password, email address & username.
+    5. "python manage.py runserver" -> go to web-page -> in app url add admin like: "<url>/admin/".
+
+* Customizing admin page
+    1. go to admin.py before admin.site.register -> create FormAdmin() class.
+    2. give FormAdmin class in admin.site.register(Form, FormAdmin)
+
+* Adding a navbar
+    1. Create a base template: base.html will keep only outer layer of html code. It will call other html codes inside it.
+    2. "index.html", "about.html" or any other .html pages will contain html code i.e. related to it & for outer later code they will contain reference of "base.html".
+    3. make sure in views.py -> add about() function to connect our web page with about.html, in urls.py -> add path() of about in urlspattern.
+    4. At this point, you can view all your pages using "url/page_name" for e.g. "url/about".
+    5. Now, to add navbar -> add navbar.txt content above block code jinja code where we connected other html pages with base.html. (because navbar is suppose to come at the top). 
+
