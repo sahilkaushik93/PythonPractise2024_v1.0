@@ -34,7 +34,9 @@
     3. from admin we can add items to be displayed on web-page.
 
 * Displaying data on web-page
-    1. 
+    1. Bring data to HTML pages via views.py. 
+    2. First import all kind of data from model.py to views.py, then provide that data to HTML pages using jinja syntax.
+    3. Add bootstrap as per convenience.
 
 
 
