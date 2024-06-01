@@ -23,6 +23,19 @@
     3. connect views.py & templates by mentioning "template_name = <template.html>" in the class.
     4. connect everything with the help of urls: create "restaurant_menu/urls.py" -> add urlpatterns in it. Then in "mysite/urls.py" -> add urlpatterns for connecting restaurant_menu views & templates with django app.
 
+* Context in django
+    1. HTML pages need data from views.py to display on web-pages. To get those data in views.py & give it to HTML pages, we require context.
+    2. to implement context in django, we require pre-defined method a.k.a "get_context_data()". 
+    3. In get_context_data(), we defined "context" dictionary these dict keys can be referred by HTML pages directly using {{ key_name }}.
+
+* Admin Finalisation
+    1. go to "restaurant_menu/admin.py" -> create a class for admin.
+    2. create super user : "python manage.py createsuperuser" -> give credentials to login into admin.py.
+    3. from admin we can add items to be displayed on web-page.
+
+* Displaying data on web-page
+    1. 
+
 
 
 
