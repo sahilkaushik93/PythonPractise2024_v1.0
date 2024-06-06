@@ -10,3 +10,5 @@
 * python manage.py makemigrations
 * python manage.py migrate
 * python manage.py runserver
+* create your model in models.py
+* create serializers.py in api folder to create a json response from models.py
