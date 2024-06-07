@@ -1,5 +1,6 @@
 ## Steps to build a React-Django Framework
 
+### Django Backend 
 * In vs code need extensions like: es7 react, es6 javascript, django, prettier etc.
 * pip install django djangorestframework
 * django-admin startproject music_controller
@@ -12,3 +13,10 @@
 * python manage.py runserver
 * create your model in models.py
 * create serializers.py in api folder to create a json response from models.py
+
+
+### Front-End
+* install npm
+
+
+
